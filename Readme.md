@@ -31,6 +31,8 @@ What you will need:
 
 1 x WD1772
 
+1 x Microchip ATF16V8B GAL
+
 1 x 8MHz crystal oscillator
 
 1 x 100uF 16V radial electrolytic capacitor
