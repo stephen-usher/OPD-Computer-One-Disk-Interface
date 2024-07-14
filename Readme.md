@@ -3,6 +3,8 @@
 
 This is a reverse engineered version of the Computer One floppy disk interface for the ICL One Per Desk.
 
+![Rendered image of circuit board](OPD-Computer-One-Disk-Interface.jpg)
+
 The circuitry has been simpified by replacing a great deal of discrete logic with a single GAL to handle the address decoding and the clock circuit has been replaced by a crystal oscillator.
 
 The included ROM image also has beenmodified to add a BIOS Parameter Block to the boot sector on the floppy disk format so that MSDOS PCs and Atari STs can read it. Unfortunately if PCs try to write to the disk it will corrupt the format. In tests Atari STs can correctly write to the disks.
