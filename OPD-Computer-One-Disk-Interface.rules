@@ -1,0 +1,104 @@
+
+(rules PCB OPD-Computer-One-Disk-Interface
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (eu.mihosoft.freerouting.autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 3686)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.1)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.9)
+    )
+  )
+  (rule
+    (width 250.0)
+    (clear 200.0)
+    (clear 125.0 (type smd_to_turn_gap))
+    (clear 50.0 (type smd_smd))
+  )
+  (padstack "Via[0-1]_800:400_um"
+    (shape
+      (circle F.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_800:400_um" "Via[0-1]_800:400_um" default
+  )
+  (via 
+    "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_800:400_um-Power" "Via[0-1]_800:400_um" Power
+  )
+  (via_rule
+    default "Via[0-1]_800:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_800:400_um-kicad_default"
+  )
+  (via_rule
+    Power "Via[0-1]_800:400_um-Power"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    "Net-(IC4-~{Mr})" "_1772CS" A0 A1 ID0 ID1 ID2 ID3
+    ID4 ID5 ID6 ID7 "_MRESET" ISTEP DIRC CLOCK
+    "_RD" MOTOR "WRT_GATE" "WRT_DATA" "_TRACK0" INDEX "_WR_PROT" "unconnected-(IC1-DRQ-Pad27)"
+    INTRQ "unconnected-(IC2-~{PGM}-Pad27)" A12 A7 A6 A5 A4 A3
+    A2 A10 "_ROMOE" A11 A9 A8 A13 "unconnected-(IC2-VPP-Pad1)"
+    D7 D6 D5 D4 D3 D2 D1 D0
+    "_CE" 175Q0 "unconnected-(IC4-~{Q0}-Pad3)" "unconnected-(IC4-~{Q3}-Pad14)" 175Q1 175CP 175Q2 "unconnected-(IC4-~{Q1}-Pad6)"
+    "unconnected-(IC4-~{Q2}-Pad11)" A14 "_OE" "_INTR" DIR "_WD" "_WE" "_STEP"
+    MOTORON R{slash}W "_SEL1" "_SIDE" "_SEL0" "unconnected-(IC5-IO5-Pad15)" "unconnected-(IC5-I6-Pad6)" "unconnected-(IC5-IO8-Pad12)"
+    "unconnected-(IC5-IO6-Pad14)" "unconnected-(IC5-I9-Pad9)" "unconnected-(IC5-I8-Pad8)" "unconnected-(IC5-IO4-Pad16)" "unconnected-(IC5-I7-Pad7)" "unconnected-(IC5-IO7-Pad13)" "unconnected-(IC7-Pad10)" "unconnected-(IC7-Pad11)"
+    "unconnected-(IC7-Pad13)" "OC_CLOCK" "unconnected-(IC7-Pad12)" "_MODULE_DETECT" "unconnected-(J2-Pin_4-Pad4)" "unconnected-(J2-Pin_14-Pad14)" "unconnected-(J2-Pin_34-Pad34)" "unconnected-(J2-Pin_2-Pad2)"
+    "unconnected-(J2-Pin_6-Pad6)" "unconnected-(RN1-R6-Pad7)" "unconnected-(RN1-R7-Pad8)" "unconnected-(RN1-R5-Pad6)" "unconnected-(X1-EN-Pad1)"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class Power
+    +5V GND
+    (clearance_class Power)
+    (via_rule Power)
+    (rule
+      (width 500.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)

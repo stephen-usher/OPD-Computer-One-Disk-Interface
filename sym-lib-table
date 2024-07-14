@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "WD1772")(type "KiCad")(uri "${KIPRJMOD}/WD1772.kicad_sym")(options "")(descr ""))
+)

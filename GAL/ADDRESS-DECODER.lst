@@ -1,0 +1,54 @@
+LISTING FOR LOGIC DESCRIPTION FILE: ADDRESS-DECODER.pld              Page 1
+
+CUPL(WM): Universal Compiler for Programmable Logic
+Version 5.0a Serial# 60008009
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+Created Sat Jul 13 20:52:07 2024
+
+  1:Name     OPD Computer One Floppy Interface Address Decode ;
+  2:PartNo   00 ;
+  3:Date     7/7/2024 ;
+  4:Revision 02 ;
+  5:Designer Engineer ;
+  6:Company  Personal ;
+  7:Assembly None ;
+  8:Location  ;
+  9:Device   g16v8 ;
+ 10:
+ 11:/* *************** INPUT PINS *********************/
+ 12:PIN  1 = !OE; /**/ 
+ 13:PIN  2 = !CE; /**/ 
+ 14:PIN  3 = A13; /**/ 
+ 15:PIN  4 = A14; /**/ 
+ 16:PIN  5 = RW; /**/ 
+ 17:PIN  6 = DEN; /**/ 
+ 18:/*PIN  7 = NC; /**/ 
+ 19:/*PIN  8 = NC; /**/
+ 20:/*PIN  9 = NC; /**/
+ 21:/*PIN 11 = NC; /**/
+ 22:
+ 23:/* *************** OUTPUT PINS *********************/
+ 24:/*PIN 12 = ; /**/
+ 25:/*PIN 13 = ; /**/
+ 26:/*PIN 14 = ; /**/
+ 27:/*PIN 15 = ; /**/
+ 28:/*PIN 16 = ; /**/
+ 29:PIN 17 = !1772CS; /**/
+ 30:PIN 18 = !175CP; /**/
+ 31:PIN 19 = !ROMOE; /**/
+ 32:
+ 33:ENABLE = OE & CE;
+ 34:
+ 35:A13N14 = !A13 & A14;
+ 36:
+ 37:1772CS = ENABLE & A14 & A13;
+ 38:
+ 39:175CP = ENABLE & A13N14 & !RW;
+ 40:
+ 41:ROMOE = ENABLE & RW & !A14;
+ 42:
+
+
+
+Jedec Fuse Checksum       (147f)
+Jedec Transmit Checksum   (9381)

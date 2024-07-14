@@ -1,0 +1,32 @@
+%SIGNAL
+PIN  18 = !175CP 
+PIN  17 = !1772CS 
+PIN   3 =  A13 
+PIN   4 =  A14 
+PIN   2 = !CE 
+PIN   6 =  DEN 
+PIN   1 = !OE 
+PIN  19 = !ROMOE 
+PIN   5 =  RW 
+%END
+
+%FIELD
+%END
+
+%EQUATION
+175CP =>
+    !A13 & A14 & !CE & !OE & !RW
+
+1772CS =>
+    A13 & A14 & !CE & !OE
+
+A13N14 =>
+    !A13 & A14
+
+ENABLE =>
+    CE & OE
+
+ROMOE =>
+    !A14 & !CE & !OE & RW
+
+%END

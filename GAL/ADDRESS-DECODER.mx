@@ -1,0 +1,41 @@
+Name     OPD Computer One Floppy Interface Address Decode ;
+PartNo   00 ;
+Date     7/7/2024 ;
+Revision 02 ;
+Designer Engineer ;
+Company  Personal ;
+Assembly None ;
+Location  ;
+Device   g16v8 ;
+
+/* *************** INPUT PINS *********************/
+PIN  1 = !OE; /**/ 
+PIN  2 = !CE; /**/ 
+PIN  3 = A13; /**/ 
+PIN  4 = A14; /**/ 
+PIN  5 = RW; /**/ 
+PIN  6 = DEN; /**/ 
+/*PIN  7 = NC; /**/ 
+/*PIN  8 = NC; /**/
+/*PIN  9 = NC; /**/
+/*PIN 11 = NC; /**/
+
+/* *************** OUTPUT PINS *********************/
+/*PIN 12 = ; /**/
+/*PIN 13 = ; /**/
+/*PIN 14 = ; /**/
+/*PIN 15 = ; /**/
+/*PIN 16 = ; /**/
+PIN 17 = !1772CS; /**/
+PIN 18 = !175CP; /**/
+PIN 19 = !ROMOE; /**/
+
+ENABLE = OE & CE;
+
+A13N14 = !A13 & A14;
+
+1772CS = ENABLE & A14 & A13;
+
+175CP = ENABLE & A13N14 & !RW;
+
+ROMOE = ENABLE & RW & !A14;
