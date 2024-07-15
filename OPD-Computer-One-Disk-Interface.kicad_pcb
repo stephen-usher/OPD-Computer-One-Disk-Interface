@@ -12383,7 +12383,7 @@
 			(justify left bottom mirror)
 		)
 	)
-	(gr_text "OPD Computer One\nFloppy Interface Recreation\n©2014 Stephen Usher"
+	(gr_text "OPD Computer One\nFloppy Interface Recreation\n©2024 Stephen Usher"
 		(at 106.1 100.7 270)
 		(layer "B.SilkS")
 		(uuid "36c9e792-7a95-41f1-a1a1-af4d9e57e28c")
